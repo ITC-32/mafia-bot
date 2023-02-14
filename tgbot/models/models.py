@@ -1,5 +1,5 @@
 from gino import Gino
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey, Boolean
 
 db = Gino()
 
@@ -18,6 +18,7 @@ class Room(db.Model):
     Id = Column(Integer(), primary_key=True)
     name = Column(String(120))
     owner = Column(ForeignKey("users.tg_id"))
+    active_status = Column(Boolean, default=True)
 
 
 class GameMembers(db.Model):

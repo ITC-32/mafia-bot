@@ -9,7 +9,6 @@ async def bot_echo(message: types.Message):
         "Сообщение:",
         message.text
     ]
-
     await message.answer('\n'.join(text))
 
 
