@@ -1,6 +1,10 @@
 from dataclasses import dataclass
+from pathlib import Path
 
 from environs import Env
+
+
+BASE_DIR = Path(__file__).parent.parent
 
 
 @dataclass
