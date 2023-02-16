@@ -19,6 +19,7 @@ class Room(db.Model):
     name = Column(String(120))
     owner = Column(ForeignKey("users.tg_id"))
     active_status = Column(Boolean, default=True)
+    busy = Column(Boolean, default=False)
 
 
 class GameMembers(db.Model):
@@ -28,3 +29,4 @@ class GameMembers(db.Model):
     Id = Column(Integer(), primary_key=True)
     user_id = Column(ForeignKey("users.tg_id"))
     room_id = Column(ForeignKey("room.Id"))
+    is_playing = Column(Boolean, default=True)
